@@ -1,0 +1,40 @@
+<?php
+abstract class Airplane {
+	protected $fuel, $maxSpeed, $maxHeight;
+	public function test() { echo "Я самолет"; }
+	public function takeoff() { 
+		echo "Взлетаем. Скорость " . $this->maxSpeed . "км/ч. Высота " . $this->maxHeight . "м.<br>";
+	}
+	public function landing() { echo "Садимся.<br>"; }
+}
+
+class Mig extends Airplane {
+	function __construct() {
+		$this->maxSpeed = 2560;
+		$this->maxHeight = 15000;
+	}
+	function fire() { echo "Огонь!<br>"; }
+	function test () { echo "Я самолет МиГ<br>"; }
+}
+
+class TU_154 extends Airplane {
+	function __construct() {
+		$this->maxSpeed = 900;
+		$this->maxHeight = 11100;
+	}
+	function test () { echo "Я самолет ТУ-154<br>"; }
+}
+
+$plane1 = new Mig();
+$plane1->test();
+$plane1->takeoff();
+$plane1->fire();
+$plane1->landing();
+
+echo "<br>";
+
+$plane2 = new TU_154();
+$plane2->test();
+$plane2->takeoff();
+$plane2->landing();
+?>
