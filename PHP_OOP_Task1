@@ -1,11 +1,11 @@
 <?php
 abstract class Airplane {
-	protected $fuel, $maxSpeed, $maxHeight;
-	public function test() { echo "Я самолет"; }
-	public function takeoff() { 
-		echo "Взлетаем. Скорость " . $this->maxSpeed . "км/ч. Высота " . $this->maxHeight . "м.<br>";
+	protected $name, $fuel, $maxSpeed, $maxHeight;
+	function test() { echo "Я самолет"; }
+	function takeoff() { 
+		echo "Взлетаем. Скорость $this->maxSpeed км/ч. Высота $this->maxHeight м.<br>";
 	}
-	public function landing() { echo "Садимся.<br>"; }
+	function landing() { echo "Садимся.<br>"; }
 }
 
 class Mig extends Airplane {
